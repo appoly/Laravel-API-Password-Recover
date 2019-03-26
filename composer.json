@@ -1,0 +1,38 @@
+{
+    "name": "appoly/api-password-helper",
+    "description": "Allow the users to request a forgotten password and reset over api requests",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Calum Chamberlain",
+            "email": "calum@appoly.co.uk"
+        }
+    ],
+    "require": {
+        "appoly/smart-schema": "^0.6.1"
+    },
+    "autoload": {
+        "psr-4":{
+            "Appoly\\LaravelApiPasswordHelper\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4":{
+            "Appoly\\LaravelApiPasswordHelper\\Tests\\": "tests"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0",
+        "orchestra/testbench": "^3.5"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Appoly\\LaravelApiPasswordHelper\\ApiPasswordServiceProvider"
+            ],
+            "aliases": {
+                "ApiPasswords": "Appoly\\LaravelApiPasswordHelper\\Facades\\ApiPassword"
+            }
+        }
+    }
+}

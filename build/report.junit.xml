@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Register Api Test Suite" tests="2" assertions="0" errors="2" failures="0" skipped="0" time="1.527775">
+    <testsuite name="Appoly\LaravelApiPasswordHelper\Tests\LaravelTest" file="/home/vagrant/code/laravel-api-register/tests/LaravelTest.php" tests="2" assertions="0" errors="2" failures="0" skipped="0" time="1.527775">
+      <testcase name="forgot_password_route_can_be_accessed" class="Appoly\LaravelApiPasswordHelper\Tests\LaravelTest" classname="Appoly.LaravelApiPasswordHelper.Tests.LaravelTest" file="/home/vagrant/code/laravel-api-register/tests/LaravelTest.php" line="26" assertions="0" time="1.469978">
+        <error type="Symfony\Component\Debug\Exception\FatalThrowableError">Appoly\LaravelApiPasswordHelper\Tests\LaravelTest::forgot_password_route_can_be_accessed
+Symfony\Component\Debug\Exception\FatalThrowableError: Class 'App\User' not found
+
+/home/vagrant/code/laravel-api-register/src/Http/Controllers/PasswordController.php:16
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php:48
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Route.php:219
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Route.php:176
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Router.php:680
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:104
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Router.php:682
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Router.php:657
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Router.php:623
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Router.php:612
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php:21
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:163
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php:21
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:163
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php:27
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:163
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:104
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php:347
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php:170
+/home/vagrant/code/laravel-api-register/tests/LaravelTest.php:28
+</error>
+      </testcase>
+      <testcase name="reset_password_test" class="Appoly\LaravelApiPasswordHelper\Tests\LaravelTest" classname="Appoly.LaravelApiPasswordHelper.Tests.LaravelTest" file="/home/vagrant/code/laravel-api-register/tests/LaravelTest.php" line="34" assertions="0" time="0.057797">
+        <error type="Symfony\Component\Debug\Exception\FatalThrowableError">Appoly\LaravelApiPasswordHelper\Tests\LaravelTest::reset_password_test
+Symfony\Component\Debug\Exception\FatalThrowableError: Class 'App\User' not found
+
+/home/vagrant/code/laravel-api-register/src/Http/Controllers/PasswordController.php:38
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php:48
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Route.php:219
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Route.php:176
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Router.php:680
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:104
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Router.php:682
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Router.php:657
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Router.php:623
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Router.php:612
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:176
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:30
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php:21
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:163
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php:21
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:163
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php:27
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:163
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php:53
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:104
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:151
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php:347
+/home/vagrant/code/laravel-api-register/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php:197
+/home/vagrant/code/laravel-api-register/tests/LaravelTest.php:42
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testsuites>
