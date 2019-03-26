@@ -4,7 +4,6 @@ namespace Appoly\LaravelApiPasswordHelper;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Appoly\LaravelApiPasswordHelper\JokeFactory;
 use Appoly\LaravelApiPasswordHelper\Http\Controllers\PasswordController;
 
 class ApiPasswordServiceProvider extends ServiceProvider
