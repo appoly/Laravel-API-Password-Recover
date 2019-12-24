@@ -31,12 +31,12 @@ class LaravelTest extends TestCase
     }
 
     /** @test */
-    public function reset_password_test(){
-
+    public function reset_password_test()
+    {
         $data = [
             'key' => '123456',
             'email' => 'johndoe@example.com',
-            'password' => 'secret'
+            'password' => 'secret',
         ];
 
         $this->post('/api/forgot-password', $data)

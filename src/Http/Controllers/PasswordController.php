@@ -2,12 +2,11 @@
 
 namespace Appoly\LaravelApiPasswordHelper\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Appoly\LaravelApiPasswordHelper\Http\Notifications\ResetPassword;
+use Illuminate\Http\Request;
 
-
-class PasswordController{
-
+class PasswordController
+{
     public function forgot(Request $request)
     {
         if ($request->has('email')) {
@@ -18,9 +17,10 @@ class PasswordController{
             if ($user) {
                 $user->password_helper_key = $password_helper_key;
                 $user->save();
-                
+
                 $user->notify(new ResetPassword($user));
-                    return response()->json(
+
+                return response()->json(
                         ['message' => 'An email has been sent to your account'],
                      200);
             } else {
@@ -35,7 +35,8 @@ class PasswordController{
         }
     }
 
-    public function reset(Request $request){
+    public function reset(Request $request)
+    {
         if ($request->has('key') && $request->has('password')) {
             $user = \App\User::where('password_helper_key', $request->key)->first();
             if ($user) {
@@ -43,6 +44,7 @@ class PasswordController{
                     'password' => bcrypt($request->password),
                     'password_helper_key' => null,
                 ]);
+
                 return response()->json([
                     ['message' => 'Your password has been updated'],
                 ], 200);
