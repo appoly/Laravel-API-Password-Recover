@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ffce4ffc7c05fead5fb04410cb6340a5",
+    "content-hash": "5d0efbcf93f464c91b8c2d8b084b8da8",
     "packages": [
         {
             "name": "appoly/smart-schema",
-            "version": "0.6.1",
+            "version": "0.7.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/appoly/smart-schema.git",
-                "reference": "af656949c1e3f1b9f21b9563bf16761c8fcaeddb"
+                "reference": "32b7acf9e22ae0489a6aad57afc0621c7d5947c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/appoly/smart-schema/zipball/af656949c1e3f1b9f21b9563bf16761c8fcaeddb",
-                "reference": "af656949c1e3f1b9f21b9563bf16761c8fcaeddb",
+                "url": "https://api.github.com/repos/appoly/smart-schema/zipball/32b7acf9e22ae0489a6aad57afc0621c7d5947c1",
+                "reference": "32b7acf9e22ae0489a6aad57afc0621c7d5947c1",
                 "shasum": ""
             },
             "type": "library",
@@ -45,7 +45,7 @@
                 }
             ],
             "description": "Form helper for Laravel",
-            "time": "2019-03-14T12:46:10+00:00"
+            "time": "2019-12-12T11:59:48+00:00"
         }
     ],
     "packages-dev": [
