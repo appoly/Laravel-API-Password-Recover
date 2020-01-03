@@ -16,7 +16,7 @@ class AddPasswordHelperKeyToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('password_helper_key')
                 ->nullable();
-                //->fillable();
+            //->fillable();
         });
     }
 
