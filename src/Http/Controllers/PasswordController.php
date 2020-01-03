@@ -28,11 +28,10 @@ class PasswordController
                     ['message' => 'No user found'],
                  400);
             }
-        } else {
-            return response()->json(
-                ['message' => 'Email is required'],
-            400);
-        }
+        } 
+        
+        return response()->json(['message' => 'Email is required'], 400);
+        
     }
 
     public function reset(Request $request)
