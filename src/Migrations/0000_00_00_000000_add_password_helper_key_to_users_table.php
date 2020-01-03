@@ -28,7 +28,7 @@ class AddPasswordHelperKeyToUsersTable extends Migration
     public function down()
     {
         SmartSchema::table('users', function (SchemaHelper $table) {
-            //
+            $table->dropColumn('password_helper_key');
         });
     }
 }
