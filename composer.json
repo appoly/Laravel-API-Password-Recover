@@ -6,6 +6,10 @@
         {
             "name": "Calum Chamberlain",
             "email": "calum@appoly.co.uk"
+        },
+        {
+            "name": "James Merrix",
+            "email": "james@appoly.co.uk"
         }
     ],
     "require": {
