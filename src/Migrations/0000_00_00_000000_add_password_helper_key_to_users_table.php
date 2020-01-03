@@ -2,8 +2,8 @@
 
 use Appoly\SmartSchema\SchemaHelper;
 use Appoly\SmartSchema\SmartSchema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class AddPasswordHelperKeyToUsersTable extends Migration
 {
@@ -17,7 +17,7 @@ class AddPasswordHelperKeyToUsersTable extends Migration
         SmartSchema::table('users', function (Blueprint $table) {
             $table->string('password_helper_key')
                 ->nullable();
-                //->fillable();
+            //->fillable();
         });
     }
 
