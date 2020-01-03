@@ -1,4 +1,4 @@
-# Laravel: Api forgotten password helper
+# Laravel: API forgotten password helper
 
 ## Introduction
 
