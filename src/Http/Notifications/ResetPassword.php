@@ -43,8 +43,8 @@ class ResetPassword extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->line('You have requested to change your password.')
-            ->line('Please copy the code below into the app')
+            ->line('You recently requested to reset your password for your ' . config('app.name') . ' account.')
+            ->line('Please copy and paste the code below into the app')
             ->line($this->user->password_helper_key);
     }
 
