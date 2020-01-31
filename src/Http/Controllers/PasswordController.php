@@ -44,9 +44,9 @@ class PasswordController
                     'password_helper_key' => null,
                 ]);
 
-                return response()->json([
+                return response()->json(
                     ['message' => 'Your password has been updated'],
-                ], 200);
+                , 200);
             } else {
                 return response()->json([
                     ['message' => 'No user found'],
