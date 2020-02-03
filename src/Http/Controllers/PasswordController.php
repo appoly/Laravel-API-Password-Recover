@@ -45,7 +45,7 @@ class PasswordController
                 ]);
 
                 return response()->json(
-                    ['message' => 'Your password has been updated'],
+                    ['message' => 'Your password has been updated']
                 , 200);
             } else {
                 return response()->json([
