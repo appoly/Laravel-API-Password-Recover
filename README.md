@@ -41,6 +41,8 @@ The Post route takes two form data parameters in the request _key_ and _password
 POST: /api/forgot-password
 ```
 
+If your user model has `$fillable` ensure that `password_helper_key` is added to the list of fields that are allowed to be updated.
+
 ## SmartSchema Compatibility
 
 If you are using [SmartSchema](https://github.com/appoly/smart-schema/) to manage your models fillables then add SmartField to your model
