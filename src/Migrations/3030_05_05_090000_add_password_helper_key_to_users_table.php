@@ -13,7 +13,7 @@ class AddPasswordHelperKeyToUsersTable extends Migration
      */
     public function up()
     {
-        if ( ! Schema::hasColumn('password_helper_key')) {
+        if (! Schema::hasColumn('password_helper_key')) {
             Schema::table('users', function (Blueprint $table) {
                 $table->string('password_helper_key')
                     ->nullable();
