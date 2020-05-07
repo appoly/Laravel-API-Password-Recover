@@ -13,11 +13,12 @@ class AddPasswordHelperKeyToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('password_helper_key')
-                ->nullable();
-            //->fillable();
-        });
+        if (! Schema::hasColumn('password_helper_key')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->string('password_helper_key')
+                    ->nullable();
+            });
+        }
     }
 
     /**
@@ -27,8 +28,10 @@ class AddPasswordHelperKeyToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('password_helper_key');
-        });
+        if (Schema::hasColumn('password_helper_key')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->dropColumn('password_helper_key');
+            });
+        }
     }
 }
