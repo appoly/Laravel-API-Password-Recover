@@ -12,7 +12,9 @@ class PasswordController
         if ($request->has('email')) {
             $password_helper_key = str_pad(mt_rand(0, 999999), 6, '0', STR_PAD_LEFT);
 
-            $user = \App\User::where('email', $request->email)->first();
+            $user = \App\User::where('email', $request->email)
+                ->orWhere('email', urldecode($request->email))
+                ->first();
 
             if ($user) {
                 $user->password_helper_key = $password_helper_key;
