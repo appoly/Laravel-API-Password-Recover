@@ -48,21 +48,21 @@ class ResetPassword extends Notification
 
         $mail->greeting(config('LaravelApiPasswordHelper.PASSWORD_RESET_GREETING'));
 
-        if(is_array(config('LaravelApiPasswordHelper.PASSWORD_RESET_BEFORE_CODE'))){
-            foreach(config('LaravelApiPasswordHelper.PASSWORD_RESET_BEFORE_CODE') as $line){
+        if (is_array(config('LaravelApiPasswordHelper.PASSWORD_RESET_BEFORE_CODE'))) {
+            foreach (config('LaravelApiPasswordHelper.PASSWORD_RESET_BEFORE_CODE') as $line) {
                 $mail->line($line);
             }
-        }else{
+        } else {
             $mail->line(config('LaravelApiPasswordHelper.PASSWORD_RESET_BEFORE_CODE'));
         }
 
         $mail->line($this->user->password_helper_key);
 
-        if(is_array(config('LaravelApiPasswordHelper.PASSWORD_RESET_AFTER_CODE'))){
-            foreach(config('LaravelApiPasswordHelper.PASSWORD_RESET_AFTER_CODE') as $line){
+        if (is_array(config('LaravelApiPasswordHelper.PASSWORD_RESET_AFTER_CODE'))) {
+            foreach (config('LaravelApiPasswordHelper.PASSWORD_RESET_AFTER_CODE') as $line) {
                 $mail->line($line);
             }
-        }else{
+        } else {
             $mail->line(config('LaravelApiPasswordHelper.PASSWORD_RESET_AFTER_CODE'));
         }
 
