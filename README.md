@@ -43,6 +43,16 @@ POST: /api/forgot-password
 
 If your user model has `$fillable` ensure that `password_helper_key` is added to the list of fields that are allowed to be updated.
 
+## Edit the email
+
+To edit the email you need to publish the config to your project using
+
+```bash
+php artisan vendor:publish --tag=api-password-helper-config --force
+```
+
+This will add the LaravelApiPasswordHelper file to your config folder, from there you can edit different sections of the email
+
 ## SmartSchema Compatibility
 
 If you are using [SmartSchema](https://github.com/appoly/smart-schema/) to manage your models fillables then add SmartField to your model
