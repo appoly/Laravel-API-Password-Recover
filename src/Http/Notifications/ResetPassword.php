@@ -42,10 +42,33 @@ class ResetPassword extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
-            ->line('You recently requested to reset your password for your '.config('app.name').' account.')
-            ->line('Please copy and paste the code below into the app')
-            ->line($this->user->password_helper_key);
+        $mail = (new MailMessage);
+
+        $mail->subject(config('LaravelApiPasswordHelper.PASSWORD_RESET_SUBJECT'));
+
+        $mail->greeting(config('LaravelApiPasswordHelper.PASSWORD_RESET_GREETING'));
+
+        if (is_array(config('LaravelApiPasswordHelper.PASSWORD_RESET_BEFORE_CODE'))) {
+            foreach (config('LaravelApiPasswordHelper.PASSWORD_RESET_BEFORE_CODE') as $line) {
+                $mail->line($line);
+            }
+        } else {
+            $mail->line(config('LaravelApiPasswordHelper.PASSWORD_RESET_BEFORE_CODE'));
+        }
+
+        $mail->line($this->user->password_helper_key);
+
+        if (is_array(config('LaravelApiPasswordHelper.PASSWORD_RESET_AFTER_CODE'))) {
+            foreach (config('LaravelApiPasswordHelper.PASSWORD_RESET_AFTER_CODE') as $line) {
+                $mail->line($line);
+            }
+        } else {
+            $mail->line(config('LaravelApiPasswordHelper.PASSWORD_RESET_AFTER_CODE'));
+        }
+
+        $mail->salutation(config('LaravelApiPasswordHelper.PASSWORD_RESET_SIGN_OFF'));
+
+        return $mail;
     }
 
     /**
