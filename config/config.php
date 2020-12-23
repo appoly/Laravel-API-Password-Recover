@@ -21,8 +21,8 @@ return [
         'You recently requested to reset your password for your '.config('app.name').' account.',
     ],
     'PASSWORD_RESET_AFTER_CODE' => [
-        'Please copy and paste the code below into the app'
+        'Please copy and paste the code below into the app',
     ],
-    'PASSWORD_RESET_SIGN_OFF' => 'Regards'
-    
+    'PASSWORD_RESET_SIGN_OFF' => 'Regards',
+
 ];
