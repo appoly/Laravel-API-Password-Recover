@@ -7,10 +7,11 @@ use Illuminate\Http\Request;
 
 class PasswordController
 {
-    public function __construct() {
-        class_alias(config("auth.providers.users.model"), 'User');
+    public function __construct()
+    {
+        class_alias(config('auth.providers.users.model'), 'User');
     }
-    
+
     public function forgot(Request $request)
     {
         if ($request->has('email')) {
