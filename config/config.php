@@ -25,4 +25,10 @@ return [
     ],
     'PASSWORD_RESET_SIGN_OFF' => 'Regards',
 
+    /*
+    Token will be injected at the end. Example:
+    'PASSWORD_RESET_DEEPLINK' => 'myapp://resetpassword?token=',
+    */
+    'PASSWORD_RESET_DEEPLINK' => '',
+
 ];
