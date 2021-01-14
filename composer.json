@@ -13,7 +13,6 @@
         }
     ],
     "require": {
-        "appoly/smart-schema": "^0.7.12"
     },
     "autoload": {
         "psr-4":{
