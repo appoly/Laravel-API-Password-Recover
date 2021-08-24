@@ -27,20 +27,19 @@ class PasswordController
 
                 return response()->json([
                     'success' => true,
-                    'message' => 'An email has been sent to your account'
+                    'message' => 'An email has been sent to your account',
                 ], 200);
             } else {
                 return response()->json([
                     'success' => false,
-                    'message' => 'No user found'
+                    'message' => 'No user found',
                 ], 400);
             }
         }
 
-        
         return response()->json([
             'success' => false,
-            'message' => 'Email is required'
+            'message' => 'Email is required',
         ], 400);
     }
 
@@ -60,20 +59,19 @@ class PasswordController
 
                 return response()->json([
                     'success' => true,
-                    'message' => 'Your password has been updated'
+                    'message' => 'Your password has been updated',
                 ], 200);
             } else {
                 return response()->json([
                     'success' => false,
-                    'message' => 'No user found'
+                    'message' => 'No user found',
                 ], 400);
             }
         }
 
-        
         return response()->json([
             'success' => false,
-            'message' => 'Key and Password are required'
+            'message' => 'Key and Password are required',
         ], 400);
     }
 }
