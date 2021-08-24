@@ -25,17 +25,23 @@ class PasswordController
 
                 $user->notify(new ResetPassword($user));
 
-                return response()->json(
-                        ['message' => 'An email has been sent to your account'],
-                     200);
+                return response()->json([
+                    'success' => true,
+                    'message' => 'An email has been sent to your account'
+                ], 200);
             } else {
-                return response()->json(
-                    ['message' => 'No user found'],
-                 400);
+                return response()->json([
+                    'success' => false,
+                    'message' => 'No user found'
+                ], 400);
             }
         }
 
-        return response()->json(['message' => 'Email is required'], 400);
+        
+        return response()->json([
+            'success' => false,
+            'message' => 'Email is required'
+        ], 400);
     }
 
     public function reset(Request $request)
@@ -52,17 +58,22 @@ class PasswordController
                     'password_helper_key' => null,
                 ]);
 
-                return response()->json(
-                    ['message' => 'Your password has been updated'], 200);
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Your password has been updated'
+                ], 200);
             } else {
                 return response()->json([
-                    ['message' => 'No user found'],
+                    'success' => false,
+                    'message' => 'No user found'
                 ], 400);
             }
         }
 
+        
         return response()->json([
-            ['message' => 'Key and Password are required'],
+            'success' => false,
+            'message' => 'Key and Password are required'
         ], 400);
     }
 }
