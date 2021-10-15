@@ -2,6 +2,7 @@
 
 namespace Appoly\LaravelApiPasswordHelper\Http\Notifications;
 
+use Hamcrest\Type\IsString;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -12,6 +13,8 @@ class ResetPassword extends Notification
     use Queueable;
 
     private $user;
+
+    private $customEmailTemplate;
 
     /**
      * Create a new notification instance.
@@ -43,6 +46,14 @@ class ResetPassword extends Notification
     public function toMail($notifiable)
     {
         $mail = (new MailMessage);
+
+        // custom template
+        if (!empty(config('LaravelApiPasswordHelper.EMAIL_TEMPLATES'))) {
+            $this->setCustomEmailTemplate();
+            if ($this->customEmailTemplate) {
+                $mail->template($this->customEmailTemplate);
+            }
+        }
 
         $mail->subject(config('LaravelApiPasswordHelper.PASSWORD_RESET_SUBJECT'));
 
@@ -89,5 +100,31 @@ class ResetPassword extends Notification
         return [
             //
         ];
+    }
+
+    private function setCustomEmailTemplate()
+    {
+        $config = config('LaravelApiPasswordHelper.EMAIL_TEMPLATES');
+
+        if (is_string($config)) {
+            $this->customEmailTemplate = $config;
+            return;
+        }
+
+        if (is_array($config)) {
+            foreach ($config as $fieldName => $templateConfig) {
+                // get the field value from db
+                // sample of line below: 'role.id' = $this->user->role->id
+                eval('$dbFieldValue = $this->user->' . str_replace('.', '->', $fieldName) . ';');
+
+                foreach ($templateConfig as $fieldValue => $templateName) {
+                    // compare the value from db to the given value
+                    if ($dbFieldValue == $fieldValue) {
+                        $this->customEmailTemplate = $templateName;
+                        return;
+                    }
+                }
+            }
+        }
     }
 }
