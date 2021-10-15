@@ -31,4 +31,25 @@ return [
     */
     'PASSWORD_RESET_DEEPLINK' => '',
 
+    /*
+    Email Template -- this should be a template based on 'notificationns::email'
+    at the time of writing it is found at '/vendor/laravel/framework/src/illuminate/Notifcations/resources/views/email.blade.php'
+
+    NOTE:   The base template might change in future laravel updates so if you are using this
+            package feature please test the emails every update.
+    */
+
+    // use default template notifications::message
+    'EMAIL_TEMPLATES' => '',
+
+    // EXAMPLES
+    // --- use a custom template for all
+    // 'EMAIL_TEMPLATES' => 'mail.templates.consumer',
+
+    // -- use a custom  template for each case
+    // $user->role == 3 use consumer template
+    // 'EMAIL_TEMPLATES' => ['role' => [3 => 'mail.templates.consumer']]
+
+    // $user->role()->id == 3 use consumer template
+    // 'EMAIL_TEMPLATES' => ['role().id' => [3 => 'mail.templates.consumer']]
 ];
