@@ -48,7 +48,7 @@ class ResetPassword extends Notification
         $mail = (new MailMessage);
 
         // custom template
-        if (!empty(config('LaravelApiPasswordHelper.EMAIL_TEMPLATES'))) {
+        if (! empty(config('LaravelApiPasswordHelper.EMAIL_TEMPLATES'))) {
             $this->setCustomEmailTemplate();
             if ($this->customEmailTemplate) {
                 $mail->template($this->customEmailTemplate);
@@ -108,6 +108,7 @@ class ResetPassword extends Notification
 
         if (is_string($config)) {
             $this->customEmailTemplate = $config;
+
             return;
         }
 
@@ -115,12 +116,13 @@ class ResetPassword extends Notification
             foreach ($config as $fieldName => $templateConfig) {
                 // get the field value from db
                 // sample of line below: 'role.id' = $this->user->role->id
-                eval('$dbFieldValue = $this->user->' . str_replace('.', '->', $fieldName) . ';');
+                eval('$dbFieldValue = $this->user->'.str_replace('.', '->', $fieldName).';');
 
                 foreach ($templateConfig as $fieldValue => $templateName) {
                     // compare the value from db to the given value
                     if ($dbFieldValue == $fieldValue) {
                         $this->customEmailTemplate = $templateName;
+
                         return;
                     }
                 }
