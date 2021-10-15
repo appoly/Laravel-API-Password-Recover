@@ -50,9 +50,6 @@ return [
     // $user->role == 3 use consumer template
     // 'EMAIL_TEMPLATES' => ['role' => [3 => 'mail.templates.consumer']]
 
-    // $user->role->id == 3 use consumer template
-    // 'EMAIL_TEMPLATES' => ['role' => [3 => 'mail.templates.consumer']]
-
     // $user->role()->id == 3 use consumer template
     // 'EMAIL_TEMPLATES' => ['role().id' => [3 => 'mail.templates.consumer']]
 ];
