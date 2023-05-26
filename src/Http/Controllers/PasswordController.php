@@ -15,8 +15,10 @@ class PasswordController
         if ($request->has('email')) {
             $password_helper_key = str_pad(mt_rand(0, 999999), config('LaravelApiPasswordHelper.PASSWORD_RESET_CODE_LENGTH'), '0', STR_PAD_LEFT);
 
-            $user = $userClass::where('email', $request->email)
-                ->orWhere('email', urldecode($request->email))
+            $email = str_replace(' ', '+', $request->email); // Fix for spaces in email addresses not being encoded
+
+            $user = $userClass::where('email', $email)
+                ->orWhere('email', urldecode($email))
                 ->first();
 
             if ($user) {
