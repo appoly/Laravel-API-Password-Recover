@@ -3,7 +3,6 @@
 namespace Appoly\LaravelApiPasswordHelper\Http\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
@@ -11,16 +10,21 @@ class ResetPassword extends Notification
 {
     use Queueable;
 
-    private $user;
+    /**
+     * The plain reset code. Only ever held in memory; the database stores an HMAC.
+     *
+     * @var string
+     */
+    public $code;
 
     /**
      * Create a new notification instance.
      *
-     * @return void
+     * @param  mixed  $user
      */
-    public function __construct($user)
+    public function __construct(private $user, string $code)
     {
-        $this->user = $user;
+        $this->code = $code;
     }
 
     /**
@@ -59,10 +63,10 @@ class ResetPassword extends Notification
         if (config('LaravelApiPasswordHelper.PASSWORD_RESET_DEEPLINK')) {
             $mail->action(
                 'Reset password',
-                config('LaravelApiPasswordHelper.PASSWORD_RESET_DEEPLINK').$this->user->password_helper_key
+                config('LaravelApiPasswordHelper.PASSWORD_RESET_DEEPLINK').$this->code
             );
         } else {
-            $mail->line($this->user->password_helper_key);
+            $mail->line($this->code);
         }
 
         if (is_array(config('LaravelApiPasswordHelper.PASSWORD_RESET_AFTER_CODE'))) {

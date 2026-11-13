@@ -2,27 +2,11 @@
 
 namespace Appoly\LaravelApiPasswordHelper\Tests;
 
-use Appoly\LaravelApiPasswordHelper\ApiPasswordServiceProvider;
-use Appoly\LaravelApiPasswordHelper\Facades\ApiPassword;
-use Orchestra\Testbench\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class LaravelTest extends TestCase
 {
-    protected function getPackageProviders($app)
-    {
-        return [
-            ApiPasswordServiceProvider::class,
-        ];
-    }
-
-    protected function getPackageAliases($app)
-    {
-        return [
-            'ApiPasswords' => ApiPassword::class,
-        ];
-    }
-
-    /** @test */
+    #[Test]
     public function forgot_password_route_can_be_accessed()
     {
         $this->get('/api/forgot-password?email="calum@example.com"')
@@ -30,7 +14,7 @@ class LaravelTest extends TestCase
             ->assertStatus(400);
     }
 
-    /** @test */
+    #[Test]
     public function reset_password_test()
     {
         $data = [

@@ -1,31 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="vendor/autoload.php"
-         backupGlobals="false"
-         backupStaticAttributes="false"
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
          colors="true"
-         verbose="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         processIsolation="false"
-         stopOnFailure="false">
+         cacheDirectory=".phpunit.cache">
     <testsuites>
-        <testsuite name="Register Api Test Suite">
+        <testsuite name="Package">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
-    <filter>
-        <whitelist>
-            <directory suffix=".php">src/</directory>
-        </whitelist>
-    </filter>
-    <logging>
-        <log type="tap" target="build/report.tap"/>
-        <log type="junit" target="build/report.junit.xml"/>
-        <log type="coverage-text" target="build/coverage.txt"/>
-        <log type="coverage-clover" target="build/logs/clover.xml"/>
-    </logging>
+    <source>
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+    </source>
     <php>
+        <env name="APP_KEY" value="base64:2fl+Ktvkfl+Fuz4Qp/A75G2RTiWVA/ZoKZvp6fiiM10="/>
         <env name="DB_CONNECTION" value="testing"/>
+        <env name="CACHE_STORE" value="array"/>
+        <env name="MAIL_MAILER" value="array"/>
     </php>
 </phpunit>
